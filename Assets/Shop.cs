@@ -22,5 +22,11 @@ public class Shop : MonoBehaviour
         Debug.Log("boba");
         _buildManager.SelectTurretToBuild(turretBluePrint[1]);
     }
+
+    public void SecectTeslaTower()
+    {
+        Debug.Log("boba and biba");
+        _buildManager.SelectTurretToBuild(turretBluePrint[2]);
+    }
     
 }
