@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class haha : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource _audio;
     public void OnClickHaha()
     {
-        audio.Play();
+        _audio.Play();
         
     }
 
