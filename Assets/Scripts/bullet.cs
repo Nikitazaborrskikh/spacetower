@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,14 @@ public class bullet : MonoBehaviour
     public float speed = 70f;
     private Enemy enemyhp;
     public float damage = 20;
-    
-    
+    public GameObject coinPref;
+    private PlayerStats coin;
+
+    private void Start()
+    {
+        coin = coinPref.GetComponent<PlayerStats>();
+    }
+
     public void Follow (Transform _target)
     {
         target = _target;
@@ -38,7 +45,9 @@ public class bullet : MonoBehaviour
         transform.Translate(dir.normalized * distThisFrame, Space.World);
        void HitTarget()
        {
+           
            Damage(enemy);
+           coin.EnemyKill();
            Destroy(gameObject);
            
            

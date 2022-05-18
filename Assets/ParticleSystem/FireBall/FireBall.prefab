@@ -4885,6 +4885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5.04
   damage: 20
+  coinPref: {fileID: 0}
 --- !u!1 &2924232608689528699
 GameObject:
   m_ObjectHideFlags: 0

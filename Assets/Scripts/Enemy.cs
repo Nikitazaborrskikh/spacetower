@@ -11,11 +11,18 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     private Slider _slider;
     private float health = 100f;
-    
+    private GameObject gamemanager;
+    private PlayerStats coinsplus;
+    private GameObject  Base;
+    private Die die;
+
     private void Awake()
     {
         _slider = GetComponentInChildren<Slider>();
-       
+        Base = GameObject.FindWithTag("Base");
+        die = Base.GetComponent<Die>();
+       gamemanager = GameObject.FindWithTag("GameController");
+       coinsplus = gamemanager.GetComponent<PlayerStats>();
         agent = GetComponent<NavMeshAgent>();
         m_Target = GameObject.FindWithTag("Base").transform;
     }
@@ -25,6 +32,7 @@ public class Enemy : MonoBehaviour
         if(Vector3.Distance(agent.transform.position, agent.destination) < 2f)
         {
             Die();
+            die.TakeDamage();
         }
 
         
@@ -36,6 +44,7 @@ public class Enemy : MonoBehaviour
     {
         health -= amount;
         _slider.value = health;
+        
         if (health <= 0)
         {
             Die();
@@ -44,6 +53,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        coinsplus.EnemyKill();
         Destroy(this.gameObject);
     }
 

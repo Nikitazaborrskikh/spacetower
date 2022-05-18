@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class WaveSpawn : MonoBehaviour
 {
@@ -11,9 +11,11 @@ public class WaveSpawn : MonoBehaviour
     private float _TimeBtwWaves = 10f;
     private float _countdown = 2f;
     private int _wavenumber = 0;
+    public int wavecount = 0;
     [SerializeField] private Text text;
     private void Update()
     {
+        CheckWin(_wavenumber , wavecount);
         if(_countdown <= 0)
         {
             StartCoroutine(Spawn());
@@ -37,6 +39,22 @@ public class WaveSpawn : MonoBehaviour
     {
         
         Instantiate(enemyprefab, SpawnPoint.position, SpawnPoint.rotation);
+    }
+
+    void CheckWin(int wavenumber, int LevelWave)
+    {
+        if (wavenumber == LevelWave)
+        {
+            SceneManager.LoadScene("MenuGood");
+        }
+    }
+
+    void CheckEnemies()
+    {
+        if (!GameObject.FindWithTag("Enemy"))
+        {
+            
+        }
     }
     
 }
