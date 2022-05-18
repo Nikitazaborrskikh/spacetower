@@ -11,10 +11,10 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
 
     [SerializeField] private GameObject _image;
 
-    //private void Start()
-    //{
-    //    _image.SetActive(false);
-    //}
+    private void Start()
+    {
+        
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -23,6 +23,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         _image.SetActive(true);
         _item.transform.localScale *= _scaleChange;
     }

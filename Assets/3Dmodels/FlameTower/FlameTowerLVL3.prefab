@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1161878470794492699}
   - component: {fileID: 885152380125469848}
   - component: {fileID: 3492655824612952199}
+  - component: {fileID: 4777720396067488507}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: d6c7e7ea9e389d043ace1d9a83abdfcf, type: 3}
+  - {fileID: 2100000, guid: 56f97bae1a64c8848a24716d79789d76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,6 +82,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4777720396067488507
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587537858592256619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89f4e1e2bc9a92246b1ce89741ad40b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2234516582649425389
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 7716217199502004396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45.99, y: 7.06, z: 7.69}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 6066336155545031027}
   - {fileID: 6881335105043231824}

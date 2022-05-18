@@ -17,7 +17,7 @@ public class LoadLobby : MonoBehaviour
     IEnumerator LoadSceaneCor()
     {
         yield return new WaitForSeconds(3f);
-        asyncOperation = SceneManager.LoadSceneAsync("GameMenu");
+        asyncOperation = SceneManager.LoadSceneAsync("DontTuch");
 
         while (!asyncOperation.isDone)
         {
