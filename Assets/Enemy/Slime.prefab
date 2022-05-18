@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 6794388728486887482}
   - component: {fileID: 7630609707403448223}
   - component: {fileID: 5620958872819661653}
+  - component: {fileID: 2029197568}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -121,8 +122,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6125269466660035200}
-  m_LocalRotation: {x: -0.61833537, y: -0.34301817, z: 0.3430181, w: 0.61833525}
-  m_LocalPosition: {x: -2.6572857, y: 16.03897, z: -12.3658}
+  m_LocalRotation: {x: -0.1946796, y: 0.1946796, z: 0.6797793, w: 0.6797793}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.5000005, y: 7.5000005, z: 8.2981415}
   m_Children:
   - {fileID: 7689075595773480489}
@@ -130,7 +131,7 @@ Transform:
   - {fileID: 7397855984350511315}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -31.962, y: 0, z: 90}
 --- !u!33 &7630609707403448223
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -180,6 +181,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2029197568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6125269466660035200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72dc86cea261cdb49a7c33a7e8fab086, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6768628980786038669
 GameObject:
   m_ObjectHideFlags: 0

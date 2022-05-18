@@ -13,6 +13,7 @@ public class WaveSpawn : MonoBehaviour
     private int _wavenumber = 0;
     public int wavecount = 0;
     [SerializeField] private Text text;
+
     private void Update()
     {
         CheckWin(_wavenumber , wavecount);
@@ -41,11 +42,17 @@ public class WaveSpawn : MonoBehaviour
         Instantiate(enemyprefab, SpawnPoint.position, SpawnPoint.rotation);
     }
 
-    void CheckWin(int wavenumber, int LevelWave)
+    public void CheckWin(int wavenumber, int LevelWave)
     {
         if (wavenumber == LevelWave)
         {
-            SceneManager.LoadScene("MenuGood");
+            SceneManager.LoadScene("WinSceane");
+            //int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+            //if (currentLevel >= PlayerPrefs.GetInt("levels"))
+            //{
+            //    PlayerPrefs.SetInt("levels", currentLevel + 1);
+            //}
         }
     }
 

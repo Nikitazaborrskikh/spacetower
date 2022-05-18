@@ -9,6 +9,6 @@ public class Restart : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Nikitatest");
+        SceneManager.LoadScene("SelectLevel");
     }
 }
