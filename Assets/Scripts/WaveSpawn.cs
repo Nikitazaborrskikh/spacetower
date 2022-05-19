@@ -48,7 +48,7 @@ public class WaveSpawn : MonoBehaviour
         if (wavenumber == LevelWave)
         {
             UnLockLevel();
-            SceneManager.LoadScene("WinSceane");
+            //SceneManager.LoadScene("WinSceane");
             
         }
     }
@@ -59,6 +59,7 @@ public class WaveSpawn : MonoBehaviour
 
         if (currentLevel >= PlayerPrefs.GetInt("levels"))
         {
+            Debug.Log("sdssds");
             PlayerPrefs.SetInt("levels", currentLevel + 1);
         }
     }

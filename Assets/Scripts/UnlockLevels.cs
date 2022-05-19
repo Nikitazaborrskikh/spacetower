@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class UnlockLevels : MonoBehaviour
 {
-    int levelUnLock;
+    private int levelUnLock;
     public Button[] buttons;
 
     void Start()
     {
-        levelUnLock = PlayerPrefs.GetInt("levels", 1);
+        levelUnLock = PlayerPrefs.GetInt("levels 1", 1);
 
         for (int i = 0; i < buttons.Length; i++)
         {
