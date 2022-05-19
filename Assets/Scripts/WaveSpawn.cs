@@ -62,12 +62,12 @@ public class WaveSpawn : MonoBehaviour
 
         if (whatLevel >= PlayerPrefs.GetInt("levelUnLock"))
         {
-            Debug.Log("sdssds");
+            //Debug.Log("sdssds");
             PlayerPrefs.SetInt("levelUnLock", whatLevel + 1);
         }
         if (whatColor >= PlayerPrefs.GetInt("imageColor"))
         {
-            Debug.Log("cvbcvbcb");
+            //Debug.Log("cvbcvbcb");
             PlayerPrefs.SetInt("imageColor", whatColor + 1);
         }
     }
