@@ -15,6 +15,9 @@ public class WaveSpawn : MonoBehaviour
     
     [SerializeField] private Text text;
 
+    public int whatLevel;
+    public int whatColor;
+
     private void Update()
     {
         CheckWin(_wavenumber , wavecount);
@@ -48,19 +51,24 @@ public class WaveSpawn : MonoBehaviour
         if (wavenumber == LevelWave)
         {
             UnLockLevel();
-            //SceneManager.LoadScene("WinSceane");
+            SceneManager.LoadScene("WinSceane");
             
         }
     }
 
     public void UnLockLevel()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        
 
-        if (currentLevel >= PlayerPrefs.GetInt("levels"))
+        if (whatLevel >= PlayerPrefs.GetInt("levelUnLock"))
         {
             Debug.Log("sdssds");
-            PlayerPrefs.SetInt("levels", currentLevel + 1);
+            PlayerPrefs.SetInt("levelUnLock", whatLevel + 1);
+        }
+        if (whatColor >= PlayerPrefs.GetInt("imageColor"))
+        {
+            Debug.Log("cvbcvbcb");
+            PlayerPrefs.SetInt("imageColor", whatColor + 1);
         }
     }
 
