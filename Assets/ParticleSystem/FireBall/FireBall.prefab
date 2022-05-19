@@ -3873,7 +3873,7 @@ ParticleSystem:
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 8342518576113395838}
-      type: 1
+      type: 2
       properties: 0
       emitProbability: 1
   LightsModule:

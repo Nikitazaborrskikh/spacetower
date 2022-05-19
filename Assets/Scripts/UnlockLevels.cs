@@ -6,21 +6,44 @@ using UnityEngine.UI;
 
 public class UnlockLevels : MonoBehaviour
 {
-    int levelUnLock;
+    //private int levelUnLock;
     public Button[] buttons;
+    public Image[] images;
 
     void Start()
     {
-        levelUnLock = PlayerPrefs.GetInt("levels", 1);
+        int levelUnLock = PlayerPrefs.GetInt("levelUnLock", 1);
 
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].interactable = false;
+            if (i + 1 > levelUnLock)
+            {
+                buttons[i].interactable = false;
+            }            
         }
 
-        for (int i = 0; i < levelUnLock; i++)
+        int imageColor = PlayerPrefs.GetInt("imageColor", 0);
+
+        for (int i = 0; i < images.Length; i++)
         {
-            buttons[i].interactable = true;
+            if (i + 1 > imageColor)
+            {
+                images[i].color = Color.clear;
+            }
+        }
+
+        //for (int i = 0; i < levelUnLock; i++)
+        //{
+        //    buttons[i].interactable = true;
+        //}
+    }
+
+    public void ResetLevel()
+    {
+        for (int i = 1;i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+            PlayerPrefs.DeleteAll();
         }
     }
 
