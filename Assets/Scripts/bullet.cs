@@ -10,12 +10,10 @@ public class bullet : MonoBehaviour
     public float speed = 70f;
     private Enemy enemyhp;
     public float damage = 20;
-    public GameObject coinPref;
-    private PlayerStats coin;
-
+    
     private void Start()
     {
-        coin = coinPref.GetComponent<PlayerStats>();
+      
     }
 
     public void Follow (Transform _target)
@@ -47,7 +45,7 @@ public class bullet : MonoBehaviour
        {
            
            Damage(enemy);
-           coin.EnemyKill();
+          
            Destroy(gameObject);
            
            

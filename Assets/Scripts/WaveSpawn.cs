@@ -12,6 +12,7 @@ public class WaveSpawn : MonoBehaviour
     private float _countdown = 2f;
     private int _wavenumber = 0;
     public int wavecount = 0;
+    
     [SerializeField] private Text text;
 
     private void Update()
