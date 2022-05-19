@@ -8,7 +8,11 @@ public class node : MonoBehaviour
     [SerializeField] private Color hoverColor;
     private Renderer _rend;
     private Color _startColor;
+    [HideInInspector]
     public GameObject _turret;
+
+    [HideInInspector] public TurretBluePrint turretBluePrint;
+    [HideInInspector] public bool isUpgraded = false;
 
     private BuildManager _buildManager;
     void Start()
@@ -25,19 +29,50 @@ public class node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+       
+        if (_turret != null)
+        {
+            _buildManager.SelectNode(this);
+            return;
+        }
         if (!_buildManager.CanBuild)
         {
             return;
         }
-        if (_turret != null)
+
+       BuildTurret(_buildManager.GetTurretToBuild());
+    }
+
+    void BuildTurret(TurretBluePrint bluePrint)
+    {
+        if (PlayerStats.Money < bluePrint.cost)
         {
-            Debug.Log("Cant build! - TODO: Display on screen");
+            
             return;
         }
 
-        _buildManager.BuildTurretOn(this);
+        PlayerStats.Money -= bluePrint.cost;
+        GameObject turret = (GameObject)Instantiate(bluePrint.prefab,  GetBuildPosition(), Quaternion.identity);
+        _turret = turret;
+        
     }
 
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.Money < bluePrint.upgradecost)
+        {
+            
+            return;
+        }
+
+        PlayerStats.Money -= bluePrint.upgradecost;
+        GameObject turret = (GameObject)Instantiate(bluePrint.upgradedprefab,  GetBuildPosition(), Quaternion.identity);
+        _turret = turret;
+    }
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())

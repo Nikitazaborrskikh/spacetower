@@ -15,6 +15,8 @@ public class BuildManager : MonoBehaviour
     private TurretBluePrint _turretToBuild;
     public GameObject standartTurretPrefab;
     public GameObject AnotherTurretPrefab;
+    private node selectednode;
+    public NodeUi nodeUi;
    
 
     public bool CanBuild
@@ -22,22 +24,35 @@ public class BuildManager : MonoBehaviour
         get { return _turretToBuild != null; }
     }
 
-    public void BuildTurretOn(node node)
+    
+
+    public void SelectNode(node node)
     {
-        if (PlayerStats.Money < _turretToBuild.cost)
+        if (selectednode == node)
         {
-            Debug.Log("Not enough Money");
+            DeselectNode();
             return;
         }
+        selectednode = node;
+        _turretToBuild = null;
 
-        PlayerStats.Money -= _turretToBuild.cost;
-      GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab,  node.GetBuildPosition(), Quaternion.identity);
-      node._turret = turret;
-      Debug.Log("Money left" + PlayerStats.Money);
+        nodeUi.SetTarget(node);
     }
-
     public void SelectTurretToBuild(TurretBluePrint turret)
     {
         _turretToBuild = turret;
+        selectednode = null;
+        nodeUi.Hide();
+    }
+
+    public void DeselectNode()
+    {
+        selectednode = null;
+        nodeUi.Hide();
+    }
+
+    public TurretBluePrint GetTurretToBuild()
+    {
+        return _turretToBuild;
     }
 }
