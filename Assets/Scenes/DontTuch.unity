@@ -10058,7 +10058,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12854,11 +12854,6 @@ PrefabInstance:
     - target: {fileID: 5265570676720532969, guid: 4b3b7167faf3d2f48ab21b02d81a456f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317048991128717768, guid: 4b3b7167faf3d2f48ab21b02d81a456f, type: 3}
-      propertyPath: m_Text
-      value: "\u0426\u0435\u043D\u0430: 150\n\u0423\u0440\u043E\u043D: 15 \n\u0417\u0430\u0434\u0435\u0432\u0430\u0435\u0442
-        \u0441\u0440\u0430\u0437\u0443 3\u0445 \u0432\u0440\u0430\u0433\u043E\u0432"
       objectReference: {fileID: 0}
     - target: {fileID: 8272121217853131965, guid: 4b3b7167faf3d2f48ab21b02d81a456f, type: 3}
       propertyPath: m_Name
@@ -20283,10 +20278,14 @@ PrefabInstance:
     - target: {fileID: 2238380062250342521, guid: ad52cadc6c560f6438d1ad089197f189, type: 3}
       propertyPath: wavecount
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 8
 =======
       value: 3
 >>>>>>> babff866ae0e0e611b7afcb950c60ed100d9a8bd
+=======
+      value: 1
+>>>>>>> parent of babff86 (a)
       objectReference: {fileID: 0}
     - target: {fileID: 2238380062250342521, guid: ad52cadc6c560f6438d1ad089197f189, type: 3}
       propertyPath: whatLevel

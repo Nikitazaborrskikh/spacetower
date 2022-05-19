@@ -61,18 +61,18 @@ public class node : MonoBehaviour
         
     }
 
-    public void UpgradeTurret()
-    {
-        if (PlayerStats.Money < bluePrint.upgradecost)
-        {
+    //  public void UpgradeTurret()
+    //{
+      //  if (PlayerStats.Money < bluePrint.upgradecost)
+     //   {
             
-            return;
-        }
+          //  return;
+      //  }
 
-        PlayerStats.Money -= bluePrint.upgradecost;
-        GameObject turret = (GameObject)Instantiate(bluePrint.upgradedprefab,  GetBuildPosition(), Quaternion.identity);
-        _turret = turret;
-    }
+      //  PlayerStats.Money -= bluePrint.upgradecost;
+      //  GameObject turret = (GameObject)Instantiate(bluePrint.upgradedprefab,  GetBuildPosition(), Quaternion.identity);
+       // _turret = turret;
+  //  }
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())
