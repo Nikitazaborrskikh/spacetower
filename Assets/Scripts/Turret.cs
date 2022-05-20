@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DigitalRuby.LightningBolt;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,20 +14,45 @@ public class Turret : MonoBehaviour
     private float firecountdown = 0f;
     [SerializeField] private GameObject bulletprefab;
     public Transform firePoint;
+    public bool uselaser = false;
+    [SerializeField] private GameObject laser;
+    
+    public LineRenderer linerend;
     
     private void Start()
     {
+        linerend.enabled = false;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
     private void Update()
     {
-        if (target == null) return;
-        if (firecountdown<= 0f)
+        if (target == null)
         {
-            Shoot();
-            firecountdown = 1 / firerate;
+            if (uselaser)
+            {
+                if (linerend.enabled)
+                {
+                    linerend.enabled = false;
+                }
+            }
+            return;
         }
-        firecountdown -= Time.deltaTime;
+       
+        if (uselaser)
+        {
+            
+            LaserAttack();
+            
+        }
+        else
+        {
+            if (firecountdown<= 0f)
+            {
+                Shoot();
+                firecountdown = 1 / firerate;
+            }
+            firecountdown -= Time.deltaTime;
+        }
     }
     void UpdateTarget()
     {
@@ -62,5 +88,28 @@ public class Turret : MonoBehaviour
             bullet.CurrentEnemy(target);
         }
     }
+
+    
+
+    void LaserAttack()
+    {
+        if (!linerend.enabled)
+        {
+            linerend.enabled = true;
+        }
+        linerend.SetPosition(0,firePoint.position);
+        linerend.SetPosition(1, target.transform.position);
+        GameObject bulletGo = (GameObject)Instantiate(laser, firePoint.position, firePoint.rotation);
+        bullet bullet = bulletGo.GetComponent<bullet>();
+        if(bullet != null)
+        {
+            bullet.Follow(target.transform);
+            bullet.CurrentEnemy(target);
+        }
+
+
+    }
+
+    
     
 }

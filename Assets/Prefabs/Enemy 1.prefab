@@ -511,10 +511,8 @@ GameObject:
   - component: {fileID: 994932499495099347}
   - component: {fileID: 3028783345900317873}
   - component: {fileID: 1060067731932599669}
-  - component: {fileID: 786551003481669469}
   - component: {fileID: 7182745526081684704}
   - component: {fileID: 7757120406226647448}
-  - component: {fileID: -2884844859956920251}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -591,19 +589,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &786551003481669469
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186756331531374557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &7182745526081684704
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -614,7 +599,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -638,16 +623,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ab5f9bbe9188c479b78a646b25ecbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-2884844859956920251
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186756331531374557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: -0.0050794226, y: 0.06362491, z: 0.030889262}

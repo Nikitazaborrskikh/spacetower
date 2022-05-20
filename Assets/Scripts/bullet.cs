@@ -13,10 +13,7 @@ public class bullet : MonoBehaviour
     public bool isfrezing = false;
     
     
-    private void Start()
-    {
-      
-    }
+    
 
     public void Follow (Transform _target)
     {
@@ -45,29 +42,29 @@ public class bullet : MonoBehaviour
         transform.Translate(dir.normalized * distThisFrame, Space.World);
        void HitTarget()
        {
-           
-               Damage(enemy);
-           
-           
-           
-          
+           if (isfrezing)
+           {
+               Freeze(enemy);
+           }
+           Damage(enemy);
            Destroy(gameObject);
-           
-           
        }
 
-       void Damage(GameObject _enemy)
-       {
+       
+       
+    }
+    public void Damage(GameObject _enemy)
+    {
+        
         Enemy enemyhp =  _enemy.GetComponent<Enemy>();
         enemyhp.TakeDamage(damage);
         
-       }
+    }
 
-       void Freeze(GameObject _enemy)
-       {
-           Enemy enemyhp =  _enemy.GetComponent<Enemy>();
+    void Freeze(GameObject _enemy)
+    {
+        Enemy enemyhp =  _enemy.GetComponent<Enemy>();
+        enemyhp.FreezeSpeed();
            
-       }
-       
     }
 }

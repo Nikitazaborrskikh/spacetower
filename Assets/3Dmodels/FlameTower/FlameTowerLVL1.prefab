@@ -51,6 +51,9 @@ MonoBehaviour:
   firerate: 1
   bulletprefab: {fileID: 2158893874904952423, guid: 2ba2afccb2c8c4142bd62b5e533aa0a5, type: 3}
   firePoint: {fileID: 6110071870217877745}
+  uselaser: 0
+  laser: {fileID: 2248945032125365192, guid: bb231a97911aeae4ba4ca4dfb657531b, type: 3}
+  linerend: {fileID: 7754690989725010491, guid: 5a62caa3fd5fe92459f2b18e49955e85, type: 3}
 --- !u!1 &4505629288532173791
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     private PlayerStats coinsplus;
     private GameObject  Base;
     private Die die;
+    private Renderer rend;
+    
+
 
     private void Awake()
     {
@@ -25,6 +28,11 @@ public class Enemy : MonoBehaviour
        coinsplus = gamemanager.GetComponent<PlayerStats>();
         agent = GetComponent<NavMeshAgent>();
         m_Target = GameObject.FindWithTag("Base").transform;
+        rend = GetComponent<Renderer>();
+       
+
+
+
     }
     private void Update()
     {
@@ -43,6 +51,7 @@ public class Enemy : MonoBehaviour
     public void FreezeSpeed()
     {
         
+        agent.speed = 2;
     }
     public void TakeDamage(float amount)
     {
@@ -61,9 +70,6 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    IEnumerator FreezeTime()
-    {
-        yield return new WaitForSeconds(2);
-    }
+   
 
 }
