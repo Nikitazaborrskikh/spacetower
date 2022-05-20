@@ -39,7 +39,11 @@ public class Enemy : MonoBehaviour
        
         
     }
-    
+
+    public void FreezeSpeed()
+    {
+        
+    }
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -55,6 +59,11 @@ public class Enemy : MonoBehaviour
     {
         coinsplus.EnemyKill();
         Destroy(this.gameObject);
+    }
+
+    IEnumerator FreezeTime()
+    {
+        yield return new WaitForSeconds(2);
     }
 
 }

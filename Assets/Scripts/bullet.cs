@@ -10,6 +10,8 @@ public class bullet : MonoBehaviour
     public float speed = 70f;
     private Enemy enemyhp;
     public float damage = 20;
+    public bool isfrezing = false;
+    
     
     private void Start()
     {
@@ -44,7 +46,10 @@ public class bullet : MonoBehaviour
        void HitTarget()
        {
            
-           Damage(enemy);
+               Damage(enemy);
+           
+           
+           
           
            Destroy(gameObject);
            
@@ -55,9 +60,14 @@ public class bullet : MonoBehaviour
        {
         Enemy enemyhp =  _enemy.GetComponent<Enemy>();
         enemyhp.TakeDamage(damage);
-           
-
-
+        
        }
+
+       void Freeze(GameObject _enemy)
+       {
+           Enemy enemyhp =  _enemy.GetComponent<Enemy>();
+           
+       }
+       
     }
 }
