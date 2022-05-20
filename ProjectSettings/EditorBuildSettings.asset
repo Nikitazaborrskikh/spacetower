@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Uimenu/LoadMenu/LoadMenu 1.unity
     guid: 7b0830091e34e9747a3ba2a73d1e7bea
   - enabled: 1
-    path: Assets/Scenes/DontTuch.unity
-    guid: c3bb8d4c6af15114db0299fba89f778f
+    path: Assets/Scenes/Levels/LevelOne.unity
+    guid: 2b21eb37d6ea25940a76090c004d7406
   - enabled: 1
     path: Assets/Scenes/Uimenu/LoadMenu/LoadMenu 2.unity
     guid: 37b2b12a946c1d84fabee43233a9fe2c
